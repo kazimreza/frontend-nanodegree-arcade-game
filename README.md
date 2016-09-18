@@ -5,7 +5,7 @@ Students should use this [rubric](https://review.udacity.com/#!/projects/2696458
 
 For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
 
-
+        *************************************
 Developer ReadMe File
 
 This is the third project for Udacity's FEND program. Create Frogger - style game, using Object Oriented Concepts, JavaScript and HTML5 Canvas.
@@ -24,7 +24,10 @@ Basic Operation
 -	Reaching winner circle, prompts green ‘WinneR’ message on the left of game board and resets the game for replay
 -	Collision with enemy, prompts red ‘LooseR’ message on the left of game board and resets the game for replay
 
-Click Here to Play
+Click on Link to Play
+
+https://rawgit.com/kazimreza/frontend-nanodegree-arcade-game/master/index.html
+
 
 I Got Basic Understanding of Following Programing Concepts from this Exercise:
 -	HTML5 Canvas
