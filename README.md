@@ -13,6 +13,7 @@ For detailed instructions on how to get started, check out this [guide](https://
         *************************************
         
 Developer ReadMe File
+=====================
 
     This is the third project for Udacity's FEND program. Create Frogger - style game, using Object Oriented Concepts, JavaScript and HTML5 Canvas.
 
