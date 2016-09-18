@@ -1,6 +1,5 @@
-Click Link to Play
-
-https://rawgit.com/kazimreza/frontend-nanodegree-arcade-game/master/index.html
+[Click Here to Play]
+(https://rawgit.com/kazimreza/frontend-nanodegree-arcade-game/master/index.html)
 
 
 frontend-nanodegree-arcade-game
@@ -41,3 +40,5 @@ Developer ReadMe File
     -	Object Oriented Programing Concepts
     -	JS Scopes, Closures, Prototype Chains, Functional & Prototype Classes, Pseudoclassical Patterns, Superclass & Subclass
 
+[Click Here to Play]
+(https://rawgit.com/kazimreza/frontend-nanodegree-arcade-game/master/index.html)
