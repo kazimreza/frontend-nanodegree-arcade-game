@@ -1,0 +1,35 @@
+body {
+    background: url('game.png') no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+#pageTitle {
+    color: #fff;
+    font-family: 'Modak', cursive;
+    font-size: 4em;
+}
+#infoColumn {
+    margin-top: 130px;
+}
+#gameInstructions {
+    color: #0000ff;
+    font-size: 2em;
+    font-family: 'Architects Daughter', cursive;
+    font-weight: bolder
+}
+#winner {
+    color: #00ff00;
+    font-family: 'Baloo Bhaina', cursive;
+    font-size: 1.5em;
+}
+#looser {
+    color: #ff0000;
+    font-family: 'Baloo Bhaina', cursive;
+    font-size: 1.5em;
+}
+h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+}

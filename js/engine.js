@@ -13,6 +13,66 @@
  * the canvas' context (ctx) object globally available to make writing app.js
  * a little simpler to work with.
  */
+//  -- Instruction Function --
+//  TODO - Need to fix the function display
+/*function infoFunction() {
+
+var arrowDown = '<span class="glyphicon glyphicon-arrow-down"> </span>';
+var arrowUp = '<span class="glyphicon glyphicon-arrow-up"> </span>';
+var arrowRight = '<span class="glyphicon glyphicon-arrow-right"> </span>';
+var arrowLeft = '<span class="glyphicon glyphicon-arrow-left"> </span>';
+    var infoMessage = document.getElementById("#gameInstructions");
+infoMessage.innerHTML = document.write('<h3>Instructions</h3>' + '<p>Use the arrow keys "' + arrowLeft + ' ' + arrowUp + ' ' + arrowRight + ' ' + arrowDown + ' "to move the player across the board. Reaching the water is a WinneR, colliding with a bug is a LooseR.</p>');
+  };
+//infoFunction();*/
+/* -- WinneR Text Function -- */
+function winnerText() {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '56pt Impact';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#00ff00';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    ctx.fillText('WinneR!', 170, 100);
+    ctx.strokeText('WinneR!', 170, 100);
+};
+
+/* -- LooseR Text Function -- */
+function looserText() {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '56pt Impact';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = '#ff0000';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    ctx.fillText('LooseR!', 170, 100);
+    ctx.strokeText('LooseR!', 170, 100);
+};
+
+/* -- Game On! Text Function -- */
+function gameOnText() {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = '55pt Impact';
+    ctx.textAlign = 'center';
+    ctx.fillStyle = 'white';
+    ctx.strokeStyle = 'black';
+    ctx.lineWidth = 3;
+    ctx.fillText('Game On!', 170, 100);
+    ctx.strokeText('Game On!', 170, 100);
+};
+
+
+/* -- Calling Game On Function -- */
+
+gameOnText();
+
+
 
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
@@ -26,8 +86,8 @@ var Engine = (function(global) {
         lastTime;
 
     canvas.width = 505;
-    canvas.height = 606;
-    doc.body.appendChild(canvas);
+    canvas.height = 700;
+    doc.getElementById('game').appendChild(canvas);
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
@@ -108,14 +168,15 @@ var Engine = (function(global) {
          * for that particular row of the game level.
          */
         var rowImages = [
-                'images/water-block.png',   // Top row is water
-                'images/stone-block.png',   // Row 1 of 3 of stone
-                'images/stone-block.png',   // Row 2 of 3 of stone
-                'images/stone-block.png',   // Row 3 of 3 of stone
-                'images/grass-block.png',   // Row 1 of 2 of grass
-                'images/grass-block.png'    // Row 2 of 2 of grass
+                'images/water-block.png', // Top row is water
+                'images/stone-block.png', // Row 1 of 4 of stone
+                'images/stone-block.png', // Row 2 of 4 of stone
+                'images/stone-block.png', // Row 3 of 4 of stone
+                'images/stone-block.png', // Row 4 of 4
+                'images/grass-block.png', // Row 1 of 2 of grass
+                'images/grass-block.png' // Row 2 of 2 of grass
             ],
-            numRows = 6,
+            numRows = 7,
             numCols = 5,
             row, col;
 

@@ -1,19 +1,38 @@
-// Enemies our player must avoid
-var Enemy = function() {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
+//  -- Using 'strict mode' to improve security
+'use strict';
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+
+
+
+//  -- Enemy Function
+var Enemy = function(x, y, speed) {
+    this.speed = this.randInt(100, 500);
+    this.x = x;
+    this.y = y;
     this.sprite = 'images/enemy-bug.png';
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+/*  -- Enemy Position
+    -- Keeping Enmy within Canve  */
+
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+    this.x = this.x + this.speed * dt;
+    var lane = [60, 145, 225, 305];
+    var position = this.randInt(0, 4);
+    if (this.x >= 500) {
+        this.x = -100;
+        this.y = lane[position];
+        this.speed = this.randInt(10, 600);
+    }
+};
+
+//  -- Enemy Speed
+Enemy.prototype.randInt = function(min, max) {
+    this.min = min;
+    this.max = max;
+    var enemySpeed = 0;
+    enemySpeed = Math.floor(Math.random() * (this.max - this.min)) + this.min;
+    return enemySpeed;
 };
 
 // Draw the enemy on the screen, required method for game
@@ -21,19 +40,92 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+//  -- Player Function
+var Player = function(x, y) {
+    this.x = x;
+    this.y = y;
+    this.sprite = 'images/char-boy.png';
+};
+
+//  -- Collision Detection Function
+Player.prototype.checkCollisions = function() {
+    for (var i = 0, len = allEnemies.length; i < len; i++) {
+        if ((allEnemies[i].x) <= player.x + 50 &&
+            (allEnemies[i].x + 50) >= (player.x) &&
+            (allEnemies[i].y) <= player.y + 50 &&
+            (allEnemies[i].y + 50) >= (player.y)) {
+
+            /*  -- Collision Detected
+                -- Display "Looser Message"
+                -- Reset Player Position */
+
+            looserText();
+            setTimeout(gameOnText, 1000);
+            alert("LooseR");
+            this.reset();
+        }
+    }
+};
+
+//  -- Player Function
+
+Player.prototype.update = function(dt) {
+
+    this.x * dt;
+    this.y * dt;
+    this.checkCollisions();
+};
+
+Player.prototype.render = function() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+};
+
+//  -- Player Starting Position
+Player.prototype.reset = function() {
+    this.x = 200;
+    this.y = 500;
+};
+
+//  -  Player Movement Based Keyboard Input
+Player.prototype.handleInput = function(direction) {
+    if (direction === 'left' && this.x > 0) {
+        this.x -= 101;
+    }
+    if (direction === 'up' && this.y > 0) {
+        this.y -= 85;
+    }
+    if (this.y <= 0) {
+        /*  -- Water Detected
+            -- Display "Winner Message"
+            -- Reset Player Position */
+        winnerText();
+        setTimeout(gameOnText, 1000);
+        alert("WinneR");
+        this.reset();
+    }
+    if (direction === 'right' && this.x < 400) {
+        this.x += 101;
+    }
+    if (direction === 'down' && this.y < 450) {
+        this.y += 85;
+    }
+};
 
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 
+//  -- Enemy Objects
 
+var enemy1 = new Enemy(-100, 60, 0);
+var enemy2 = new Enemy(-100, 145, 0);
+var enemy3 = new Enemy(-100, 225, 0);
+var enemy4 = new Enemy(-100, 305, 0);
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+var allEnemies = [enemy1, enemy2, enemy3, enemy4];
+
+//  -- Player Objects
+var player = new Player(200, 500);
+
+//  -- Event Listner Function - Listens to Key Press
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',

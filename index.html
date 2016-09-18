@@ -1,13 +1,46 @@
 <!DOCTYPE html>
+<!--    Completed by KazimReza  
+        as part of Udacity Project   -->
+
+<!-- This is the third project for Udacity's FEND progrom. Create frogger-style game using Object Oriented JavaScript and HTML5 Canvas.-->
+
+
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Classic Arcade Game Clone</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Classic Arcade Game Clone</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Modak|Baloo+Bhaina" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/design.css">
 </head>
+
 <body>
+    <div class="container">
+        <section class="row text-center">
+
+            <h1 id="pageTitle">Classic Arcade Game Clone</h1>
+        </section>
+        <section class="row">
+            <section class="col-sm-5 text-center" id="infoColumn">
+                <article id="gameInstructions" class="row text-center">
+                    <h3>Instructions</h3>
+                    <p>Use the arrow keys<br>"<span class="glyphicon glyphicon-arrow-left"></span> <span class="glyphicon glyphicon-arrow-up"></span> <span class="glyphicon glyphicon-arrow-right"></span> <span class="glyphicon glyphicon-arrow-down"> </span><br>"To move the player across the board<br> <span id="winner">WinneR </span><span class="glyphicon glyphicon-resize-horizontal"></span> Reaching Water<br> <span id="looser">LooseR </span><span class="glyphicon glyphicon-resize-horizontal"></span> Colliding with Bug</p>
+                </article>
+                <canvas id="canvas" width="400" height="130">
+        </canvas>
+            </section>
+            <div class="col-sm-7 text-center" id="game"></div>
+        </section>
+    </div>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
 </body>
+
 </html>
