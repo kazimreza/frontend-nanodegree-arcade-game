@@ -13,10 +13,12 @@
  * the canvas' context (ctx) object globally available to make writing app.js
  * a little simpler to work with.
  */
+
 //  -- Instruction Function --
 //  TODO - Need to fix the function display
-/*function infoFunction() {
 
+
+/*function infoFunction() {
 var arrowDown = '<span class="glyphicon glyphicon-arrow-down"> </span>';
 var arrowUp = '<span class="glyphicon glyphicon-arrow-up"> </span>';
 var arrowRight = '<span class="glyphicon glyphicon-arrow-right"> </span>';
@@ -24,10 +26,13 @@ var arrowLeft = '<span class="glyphicon glyphicon-arrow-left"> </span>';
     var infoMessage = document.getElementById("#gameInstructions");
 infoMessage.innerHTML = document.write('<h3>Instructions</h3>' + '<p>Use the arrow keys "' + arrowLeft + ' ' + arrowUp + ' ' + arrowRight + ' ' + arrowDown + ' "to move the player across the board. Reaching the water is a WinneR, colliding with a bug is a LooseR.</p>');
   };
+  
 //infoFunction();*/
+
 /* -- WinneR Text Function -- */
 function winnerText() {
-    var canvas = document.getElementById("canvas");
+    'use strict'
+    var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = '56pt Impact';
@@ -41,7 +46,7 @@ function winnerText() {
 
 /* -- LooseR Text Function -- */
 function looserText() {
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = '56pt Impact';
@@ -55,7 +60,7 @@ function looserText() {
 
 /* -- Game On! Text Function -- */
 function gameOnText() {
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.font = '55pt Impact';
@@ -232,7 +237,9 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/enemy-bug2.png',
+        'images/char-cat-girl.png'
     ]);
     Resources.onReady(init);
 

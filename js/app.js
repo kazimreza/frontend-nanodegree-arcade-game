@@ -1,15 +1,12 @@
 //  -- Using 'strict mode' to improve security
 'use strict';
 
-
-
-
 //  -- Enemy Function
 var Enemy = function(x, y, speed) {
     this.speed = this.randInt(100, 500);
     this.x = x;
     this.y = y;
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'images/enemy-bug2.png';
 };
 
 /*  -- Enemy Position
@@ -35,7 +32,7 @@ Enemy.prototype.randInt = function(min, max) {
     return enemySpeed;
 };
 
-// Draw the enemy on the screen, required method for game
+//  -- Renedering Enemy
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
@@ -44,7 +41,7 @@ Enemy.prototype.render = function() {
 var Player = function(x, y) {
     this.x = x;
     this.y = y;
-    this.sprite = 'images/char-boy.png';
+    this.sprite = 'images/char-cat-girl.png';
 };
 
 //  -- Collision Detection Function

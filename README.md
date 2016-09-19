@@ -34,11 +34,13 @@ Developer ReadMe File
 
     https://rawgit.com/kazimreza/frontend-nanodegree-arcade-game/master/index.html
 
-
+    Reviewed several online sites, reviewed Udacity online forum and  Google+ forum to get better understanding of the concepts. Still not completely clear with some of the concepts, need a lot of practice to get better command of JS coding concepts
+    
     I Got Basic Understanding of Following Programing Concepts from this Exercise:
     -	HTML5 Canvas
     -	Object Oriented Programing Concepts
     -	JS Scopes, Closures, Prototype Chains, Functional & Prototype Classes, Pseudoclassical Patterns, Superclass & Subclass
+    
 
 [Click Here to Play]
 (https://rawgit.com/kazimreza/frontend-nanodegree-arcade-game/master/index.html)
